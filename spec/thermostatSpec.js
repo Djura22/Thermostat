@@ -44,4 +44,24 @@ describe('Thermostat', function() {
       expect(thermostat.getCurrentTemp()).toEqual(32)
     });
   });
+  
+  it('resets temp to default temp when called', function() {
+    thermostat.increaseTemp(5);
+    thermostat.reset()
+    expect(thermostat.getCurrentTemp()).toEqual(20)
+  });
+
+  describe('Energy Usage', function() {
+    it('shows low-usage when < 18', function() {
+      expect(thermostat.energyUsage()).toEqual("low-usage")
+    });
+    it('shows medium-usage when between 18-25', function() {
+      expect(thermostat.energyUsage()).toEqual("medium-usage")
+    });
+    it('shows high-usage when > 25', function() {
+      expect(thermostat.energyUsage()).toEqual("high-usage")
+    });
+
+
+  });
 });

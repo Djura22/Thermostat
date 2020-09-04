@@ -10,6 +10,10 @@ class Thermostat {
     this.DEF_MAX_TEMPERATURE = 32;
   };
 
+  reset() {
+    this.temp = 20
+  };
+
   isPowerSaveOn() {
     return this.powerSavingMode === true;
   };
