@@ -53,15 +53,17 @@ describe('Thermostat', function() {
 
   describe('Energy Usage', function() {
     it('shows low-usage when < 18', function() {
+      thermostat.decreaseTemp(3);
       expect(thermostat.energyUsage()).toEqual("low-usage")
     });
     it('shows medium-usage when between 18-25', function() {
       expect(thermostat.energyUsage()).toEqual("medium-usage")
     });
     it('shows high-usage when > 25', function() {
+      thermostat.switchPowerSaveOff();
+      thermostat.increaseTemp(6);
       expect(thermostat.energyUsage()).toEqual("high-usage")
     });
-
 
   });
 });
