@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thermostat</title>
+  </head>
+  <body>
+    <section>
+      <h1 current temperature is id="temperature"></h1>
+      <p>
+        <button id="temperature-reset">reset</button>
+        power saving mode is <span id="power-saving-status">on</span>
+        <button id="powersaving-on">PSM on</button>
+        <button id="powersaving-off">PSM off</button>
+        <form action="/increase" method="post">
+          <label for="increase_temp">
+            Increase Temperature:</label><br>
+            <input type="text" name="increase_temp">
+          </label>
+          <input type="submit" value="+">
+        </form>
+        <form action="/decrease" method="post">
+          <label for="decrease_temp">
+            Decrease Temperature:</label><br>
+            <input type="text" name="decrease_temp">
+          </label>
+          <input type="submit" value="-">
+        </form>
+      </p>
+    </section>
+    <script src="src/thermostat.js"></script>
+  </body>
+</html>
